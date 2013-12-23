@@ -51,7 +51,7 @@ drone.createPngStream().on "data", (frame) ->
             console.log('Saveing image to ./tmp/' + imageName + '.png')
         )
       imageSendingPaused = true;
-      setTimeout( ( -> imageSendingPaused = false ), 100)
+      setTimeout( ( -> imageSendingPaused = false ), 1000)
 
     if(exist)
       savingImg()
