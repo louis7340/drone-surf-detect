@@ -80,26 +80,18 @@ The reason saving images is that, you can do lot of different fun project on it.
 
 ### SURF detection via openCV
 
-If you want to start a detection via OpenCV you have to install OpenCV first. And you have to install cmake also to compile.
-
-after you have installed both OpenCV and cmake.
-
-enter folder `/detect`
-
-and enter following command
+If you want to start a detection via OpenCV you have to install OpenCV first, you will have to install cmake also to compile. After you have installed both OpenCV and cmake.
+And enter following command
 
 ```
+cd detect
 make
 cd build
 make
 ./surf_detect
 ```
 
-After you start surf detect, the program will start watching the file `/tmp`, and start SURF detect after picture saved in the folder.
-
-the SURF detect will search for the jpeg in `/detect`
-
-so you will have to change `/detect/sample.jpeg` to the object that you wish to detect.
+After you start surf detect, the program will start watching the file `/tmp`, and start SURF detection after picture saved in the folder. SURF detection will search for the object in `sample.jpeg` in `/detect` folder. So you will have to change `/detect/sample.jpeg` to the object that you wish to detect.
 ## Flow chart
 
 ![flow chart](https://raw.github.com/chilijung/drone-surf-detect/master/images/flow.png "chart")
