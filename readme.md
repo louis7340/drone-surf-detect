@@ -1,4 +1,4 @@
-# Drone browser
+# Drone SURF detection 
 
 
 ## Prerequisite
@@ -98,4 +98,4 @@ After you start surf detect, the program will start watching the file `/tmp`, an
 
 ## License 
 
-MIT [@chilijung](chilijung@gmail.com)
+MIT 
