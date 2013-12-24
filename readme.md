@@ -74,17 +74,10 @@ and you will see magic happened :)
 
 ##### Saving images
 
-After you start the server, it will start saving images to `./tmp` file, if you don't have the folder the server will create one automatically.
+After you start the server, it will start saving images to `./tmp` file, if you dont have the folder the server will create one automatically.
 
 The reason saving images is that, you can do lot of different fun project on it. Face detection, SURF detection, etc... cheers!
 
+## Flow chart
 
-## TODO
-- use getUserMedia/the webcam to control the drone (like magic xylophone...)
-- add a slider to make the speed/duration of actions configurable
-- toggle between takeoff/land buttons or disable takeoff button after takeoff...
-- mayby change the "recover" button to send a land command first (because otherwise the drone tries to start again...)
-- only show the recover button when the drone is in emergency mode
-- use canvas to draw angle-stuff or rotate the picture stream accordingly
-- get rid of the (sometimes) long lag of the picture stream 
-- makte it work without ffmpeg (skip the picture stuff then....)
+![flow chart](https://raw.github.com/chilijung/drone-surf-detect/master/images/flow.png "chart")
