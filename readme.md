@@ -78,6 +78,32 @@ After you start the server, it will start saving images to `./tmp` file, if you 
 
 The reason saving images is that, you can do lot of different fun project on it. Face detection, SURF detection, etc... cheers!
 
+### SURF detection via openCV
+
+If you want to start a detection via OpenCV you have to install OpenCV first. And you have to install cmake also to compile.
+
+after you have installed both OpenCV and cmake.
+
+enter folder `/detect`
+
+and enter following command
+
+```
+make
+cd build
+make
+./surf_detect
+```
+
+After you start surf detect, the program will start watching the file `/tmp`, and start SURF detect after picture saved in the folder.
+
+the SURF detect will search for the jpeg in `/detect`
+
+so you will have to change `/detect/sample.jpeg` to the object that you wish to detect.
 ## Flow chart
 
 ![flow chart](https://raw.github.com/chilijung/drone-surf-detect/master/images/flow.png "chart")
+
+## License 
+
+MIT [@chilijung](chilijung@gmail.com)
