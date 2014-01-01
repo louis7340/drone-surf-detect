@@ -20,6 +20,11 @@ using namespace std;
 //record png file name
 map <string,int> fe;
 
+#define x_eps 70
+#define y_eps 80
+#define area_eps 500
+#define good_ma 20
+#define k_points 500
 
 //List files and find new png file under  this directory
 string List(char *path)
@@ -77,7 +82,7 @@ int main()
     }
   
     //Detect the keypoints using SURF Detector
-    int minHessian = 500;
+    int minHessian = k_points;
 
     SurfFeatureDetector detector( minHessian );
     std::vector<KeyPoint> kp_object;
@@ -164,7 +169,7 @@ int main()
         //Draw only "good" matches
         drawMatches( object, kp_object, image, kp_image, good_matches, img_matches, Scalar::all(-1), Scalar::all(-1), vector<char>(), DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS );
 
-        if (good_matches.size() >= 4)
+        if (good_matches.size() >= good_ma)
         {
 	  strcpy( curlcmd,"curl http://localhost:3001/terminal/");
             for( int i = 0; i < good_matches.size(); i++ )
@@ -205,7 +210,7 @@ int main()
 	   
 	     
 	     //if the x-diff excceeds 50
-	     if(abs(ocenter.x-center.x)>50)
+	     if(abs(ocenter.x-center.x)>x_eps)
 	     {
 	       if(ocenter.x<center.x)
 	       {
@@ -224,8 +229,12 @@ int main()
 		 system(curlcmd);
 	       }
 	     }
+		/*
+		   handle for "up" , "down"
+		  */
+
 	     //if the y-diff excceeds 50
-	      if(abs(ocenter.y-center.y)>50)
+	      if(abs(ocenter.y-center.y)>y_eps)
 	     {
 	       if(ocenter.y<center.y)
 	       {
@@ -244,7 +253,9 @@ int main()
 		 system(curlcmd);
 	       }
 	     }
-	     
+	     /**
+		   handle for "front" , "back"
+		  **/
 	     //calculate 大概的面積
 	     float x = ( scene_corners[1].x- scene_corners[1].x+scene_corners[2].x- scene_corners[3].x)/2;
 	     float y = (scene_corners[2].y- scene_corners[1].y+scene_corners[3].y- scene_corners[0].y)/2;
